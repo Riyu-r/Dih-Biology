@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diffusion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <style>
+    body {
+      background-color: #252629;
+      color: rgb(245, 245, 245);
+      font-family: Helvetica, sans-serif;
+    }
+
+    iframe {
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .go-back-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+    }
+
+    .loader {
+      --s: 20px;
+      --_d: calc(0.353 * var(--s));
+      width: calc(var(--s) + var(--_d));
+      aspect-ratio: 1;
+      display: grid;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      display: none; /* Initially hidden */
+    }
+
+    .loader:before,
+    .loader:after {
+      content: "";
+      grid-area: 1/1;
+      clip-path: polygon(var(--_d) 0, 100% 0, 100% calc(100% - var(--_d)), calc(100% - var(--_d)) 100%, 0 100%, 0 var(--_d));
+      background: conic-gradient(from -90deg at calc(100% - var(--_d)) var(--_d), #fff 135deg, #666 0 270deg, #aaa 0);
+      animation: l6 2s infinite;
+    }
+
+    .loader:after {
+      animation-delay: -1s;
+    }
+
+    @keyframes l6 {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(30px, 0);
+      }
+      50% {
+        transform: translate(30px, 30px);
+      }
+      75% {
+        transform: translate(0, 30px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    /* Apply Arial font to all headers */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+  
+  <div class="loader"></div>
+
+  <!-- Section 1 -->
+  <section class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
+    <div class="w-full md:w-1/2" data-animate="fade-left">
+        <iframe 
+        src="https://www.youtube.com/embed/9aEaqJieb7g" 
+        title="Facilitated Diffusion" 
+        class="rounded-2xl shadow-lg w-full h-64 md:h-96" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="w-full md:w-1/2 space-y-6" data-animate="fade-right">
+      <h2 class="text-3xl font-bold mb-4">Facilitated Diffusion</h2>
+  
+      <p class="text-lg leading-relaxed">
+        <strong>Facilitated diffusion</strong> is a type of passive transport that involves the movement of molecules along their concentration gradient—<em>from high to low concentration</em>—without requiring energy (ATP).
+      </p>
+  
+      <p class="text-lg leading-relaxed">
+        This process is <strong>selective</strong>: the cell membrane permits only specific ions or molecules to pass, while blocking others. Factors such as <em>electric charge</em> and <em>pH levels</em> influence which molecules can successfully diffuse across the membrane.
+      </p>
+  
+      <p class="text-lg leading-relaxed">
+        In biological systems, lipid-based membranes form compartments that regulate the movement of <strong>water-soluble substances</strong>. Solutes such as ions, small molecules, and proteins often have unequal concentrations on either side of the membrane.
+      </p>
+  
+      <p class="text-lg leading-relaxed">
+        However, <em>hydrophilic, polar, or charged molecules</em> cannot pass freely through the lipid bilayer. Instead, they rely on specialized <strong>channel or carrier proteins</strong> to facilitate their transport across the membrane.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 (Flipped) -->
+  <section class="flex flex-col md:flex-row-reverse items-center py-20 px-4 md:px-20 gap-10 bg-gray-800">
+    <div class="w-full md:w-1/2" data-animate="fade-right">
+      <img src="https://interactives.ck12.org/inline-interactives/components/BIO_HS_2_11_4_DiffusionFacilitation/1.0.8-release/BIO_HS_2_11_4_DiffusionFacilitation.png">
+    </div>
+    <div class="w-full md:w-1/2 space-y-6" data-animate="fade-right">
+      <h2 class="text-3xl font-bold mb-4">Factors Affecting Facilitated Diffusion</h2>
+  
+      <p class="text-lg leading-relaxed">
+        <strong>Brownian motion</strong> is the driving force behind the diffusion of fluids. In facilitated diffusion, several key factors influence how fast and efficiently molecules are transported across membranes.
+      </p>
+  
+      <ul class="list-disc list-inside space-y-4 text-lg">
+        <li>
+          <span class="font-semibold text-cyan-400">Temperature:</span>
+          Higher temperatures increase molecular motion and energy, which accelerates diffusion.
+        </li>
+        <li>
+          <span class="font-semibold text-cyan-400">Concentration:</span>
+          Molecules naturally move from regions of higher concentration to regions of lower concentration.
+        </li>
+        <li>
+          <span class="font-semibold text-cyan-400">Diffusion Distance:</span>
+          Diffusion occurs more rapidly over shorter distances. For example, gases diffuse faster through a thin wall than through a thick one.
+        </li>
+        <li>
+          <span class="font-semibold text-cyan-400">Size of Molecules:</span>
+          Smaller molecules are lighter and move more quickly, enabling faster diffusion compared to larger molecules.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
+    <div class="w-full md:w-1/2" data-animate="fade-right">
+      <img src="https://bio.libretexts.org/@api/deki/files/61136/Screen_Shot_2022-05-24_at_5.48.35_PM.png?revision=1g" alt="Osmosis Example" class="rounded-2xl shadow-lg w-full">
+    </div>
+    <div class="w-full md:w-1/2" data-animate="fade-right">
+      <h2 class="text-3xl font-bold mb-4">Importance of Facilitated Diffusion</h2>
+      <p class="text-lg leading-relaxed">Not every molecule can cross the cell membranes. The molecules should be small and non-polar to traverse the membrane. For eg., glucose is a large molecule that cannot diffuse across the cell membrane. Ions like sodium, potassium, and calcium are charged and are repelled by the cell membrane. Amino acids and nucleic acids are polar and too large to cross the cell membrane. Also, the water movement across the membrane in bulk is difficult at times.
+
+        To facilitate these transfer of substances across the membrane, certain integral membrane proteins or the transmembrane proteins are required. They are channel proteins and carrier proteins.</p>
+    </div>
+  </section>
+
+  <!-- Go Back Button -->
+  <div class="go-back-btn">
+  <a
+    href="explore.html" 
+    class="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group flex items-center justify-center"
+  >
+    <div
+      class="bg-gray-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1024 1024"
+        height="25px"
+        width="25px"
+      >
+        <path
+          d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+          fill="#252629"
+        ></path>
+        <path
+          d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+          fill="#252629"
+        ></path>
+      </svg>
+    </div>
+    <p class="translate-x-2">Go Back</p>
+  </a>
+</div>
+
+  <script> src="loading.js"</script>
+
+</body>
+</html>

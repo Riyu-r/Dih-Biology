@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore</title>
+  <link rel="stylesheet" href="explore.css" />
+  <style>
+    /* Navbar Styles */
+    .navbar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+      font-family: Helvetica, sans-serif;
+    }
+
+    .navbar-container:hover .navbar {
+      transform: translateY(0);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .navbar a:hover {
+      color: #00bcd4;
+    }
+
+    /* Ensure main doesn't get hidden under navbar */
+    main {
+      padding-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hoverable Navbar -->
+  <div class="navbar-container">
+    <nav class="navbar">
+      <a href="Home.html">Home</a>
+      <a href="Creators.html">About The Creators</a>
+  
+    </nav>
+  </div>
+
+  <main>
+    <ul class='slider'>
+      <li class='item' style="background-image: url('https://images.unsplash.com/photo-1631556097152-c39479bbff93?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+        <div class='content'>
+          <h2 class='title'>"Osmosis"</h2>
+          <p class='description'>Osmosis is a process where water molecules move from an area of low solute concentration to high solute concentration through a semipermeable membrane</p>
+          <a href="osmosis.html"><button>Read More</button></a>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+        <div class='content'>
+          <h2 class='title'>"Diffusion"</h2>
+          <p class='description'>Diffusion is a natural and physical process, which happens on its own, without stirring or shaking the solutions.</p>
+          <a href="diffusion.html"><button>Read More</button></a>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('https://images.unsplash.com/photo-1562156194-215edc144205?q=80&w=2061&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+        <div class='content'>
+          <h2 class='title'>"Facilitated Diffusion"</h2>
+          <p class='description'>Facilitated diffusion is the transport of substances across a biological membrane from an area of higher concentration to an area of lower concentration with the help of a transport molecule.</p>
+          <a href="facdiffusion.html"><button>Read More</button></a>
+        </div>
+      </li>
+    </ul>
+    <nav class='nav'>
+      <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+      <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+    </nav>
+  </main>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="explore.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diffusion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+  <style>
+    body {
+      background-color: #252629;
+      color: rgb(245, 245, 245);
+      font-family: Helvetica, sans-serif;
+    }
+
+    iframe {
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .go-back-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 50;
+    }
+
+    .loader {
+      --s: 20px;
+      --_d: calc(0.353 * var(--s));
+      width: calc(var(--s) + var(--_d));
+      aspect-ratio: 1;
+      display: grid;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      display: none; /* Initially hidden */
+    }
+
+    @keyframes l6 {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(30px, 0);
+      }
+      50% {
+        transform: translate(30px, 30px);
+      }
+      75% {
+        transform: translate(0, 30px);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    /* Apply Arial font to all headers */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+  
+  <div class="loader"></div>
+
+  <!-- Section 1 -->
+  <section class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
+    <div class="w-full md:w-1/2" data-animate="fade-left">
+        <iframe 
+        src="https://www.youtube.com/embed/jhszFBtBPoI" 
+        title="What is Diffusion?" 
+        class="rounded-2xl shadow-lg w-full h-64 md:h-96" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="w-full md:w-1/2 space-y-6" data-animate="fade-right">
+      <h2 class="text-3xl font-bold">Diffusion</h2>
+      <p class="text-lg leading-relaxed">
+        Although you may not know what diffusion is, you’ve likely experienced it. 
+        Imagine walking through your front door and smelling a pleasant aroma from the kitchen. 
+        That smell reached you due to the <strong>diffusion</strong> of molecules through the air.
+      </p>
+      <p class="text-lg leading-relaxed">
+        <strong>Diffusion</strong> is defined as the net movement of molecules from an area of 
+        <em>greater concentration</em> to an area of <em>lesser concentration</em>.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Molecules in gases, liquids, and solids are always in motion due to their kinetic energy. 
+        These random movements and collisions cause molecules to gradually move from densely 
+        packed areas to areas with fewer molecules.
+      </p>
+      <p class="text-lg leading-relaxed">
+        This process forms a <strong>concentration gradient</strong>, an uneven distribution 
+        of molecules. Over time, as molecules continue to spread out, they reach a 
+        <strong>dynamic equilibrium</strong>—a state where they are evenly distributed 
+        but still in motion.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Diffusion happens in both living and nonliving systems. In living organisms, 
+        it enables the movement of essential substances like oxygen, carbon dioxide, 
+        and nutrients across cell membranes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 (Flipped) -->
+  <section class="flex flex-col md:flex-row-reverse items-center py-20 px-4 md:px-20 gap-10 bg-gray-800">
+    <div class="w-full md:w-1/2" data-animate="fade-right">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Diffusion.svg/1920px-Diffusion.svg.png">
+    </div>
+    <div class="w-full md:w-1/2 space-y-6" data-animate="fade-right">
+        <h2 class="text-3xl font-bold">The Science Behind Diffusion</h2>
+    
+        <p class="text-lg leading-relaxed">
+          <strong>Diffusion</strong> is the net movement of anything—atoms, ions, molecules, or even energy—
+          from a region of <em>higher concentration</em> to one of <em>lower concentration</em>. It is driven
+          by a gradient in <strong>Gibbs free energy</strong> or <strong>chemical potential</strong>.
+        </p>
+    
+        <p class="text-lg leading-relaxed">
+          While diffusion typically moves particles "downhill" along the concentration gradient,
+          rare scenarios such as <strong>spinodal decomposition</strong> involve "uphill" diffusion,
+          where movement occurs from a region of lower concentration to higher.
+        </p>
+    
+        <h3 class="text-2xl font-semibold text-cyan-400">A Stochastic Process</h3>
+        <p class="text-lg leading-relaxed">
+          Diffusion is inherently a <strong>stochastic process</strong>, meaning it involves randomness
+          in the movement of particles. Because of this, diffusion models are widely used in fields
+          such as <em>statistics, probability theory, information theory, neural networks, finance</em>,
+          and even <em>marketing</em>.
+        </p>
+    
+        <h3 class="text-2xl font-semibold text-cyan-400">Widespread Applications</h3>
+        <p class="text-lg leading-relaxed">
+          Beyond physics and biology, the principle of diffusion applies to diverse areas including
+          <strong>chemistry, sociology, economics, data science</strong>, and more. Whether it’s
+          particles, ideas, or prices—<em>everything tends to spread out from areas of high concentration</em>.
+        </p>
+    
+        <h3 class="text-2xl font-semibold text-cyan-400">Understanding Gradients</h3>
+        <p class="text-lg leading-relaxed">
+          A <strong>gradient</strong> represents a change in value over distance—like
+          <em>concentration, pressure</em>, or <em>temperature</em>. These are termed
+          <strong>concentration gradients</strong>, <strong>pressure gradients</strong>, or
+          <strong>temperature gradients</strong> respectively.
+        </p>
+    
+        <p class="text-lg leading-relaxed italic">
+          Fun fact: The word "diffusion" comes from the Latin word <strong>diffundere</strong>,
+          which means <em>"to spread out."</em>
+        </p>
+      </div>
+      </div>
+      
+  </section>
+
+  <!-- Section 3 -->
+  <section class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
+    <div class="w-full md:w-1/2" data-animate="fade-right">
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240307164545/Diffusion-and-Osmosis.png" alt="Osmosis Example" class="rounded-2xl shadow-lg w-full">
+    </div>
+    <div class="w-full md:w-1/2" data-animate="fade-right">
+      <h2 class="text-3xl font-bold mb-4">Diffusion and Osmosis</h2>
+      <p class="text-lg leading-relaxed">Diffusion and osmosis are both types of passive transport. Thus, both of them occur in a downhill manner and without energy expenditure. The difference is the diffusing molecules or particles. In diffusion, the diffusing particles are the solutes of a solution. In osmosis, the diffusing particles are the solvent of the solution, i.e. water molecules. In osmosis, water molecules diffuse from an area of high water concentration to an area of low water concentration across a biological membrane. Water that is drawn towards a concentrated solution but does not involve a biological membrane is not osmosis.
+        Whenever the fingers are placed in water for a longer time, they become pruney because of the water flow inside the cells.</p>
+    </div>
+  </section>
+
+  <!-- Go Back Button -->
+  <div class="go-back-btn">
+  <a
+    href="explore.html" 
+    class="bg-white text-center w-48 rounded-2xl h-14 relative text-black text-xl font-semibold group flex items-center justify-center"
+  >
+    <div
+      class="bg-gray-400 rounded-xl h-12 w-1/4 flex items-center justify-center absolute left-1 top-[4px] group-hover:w-[184px] z-10 duration-500"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1024 1024"
+        height="25px"
+        width="25px"
+      >
+        <path
+          d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z"
+          fill="#252629"
+        ></path>
+        <path
+          d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z"
+          fill="#252629"
+        ></path>
+      </svg>
+    </div>
+    <p class="translate-x-2">Go Back</p>
+  </a>
+</div>
+
+  <script> src="loading.js"</script>
+
+</body>
+</html>
