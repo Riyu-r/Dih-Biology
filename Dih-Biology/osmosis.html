@@ -38,77 +38,111 @@
   
   <div class="loader"></div>
 
-  <!-- Section 1 -->
-  <section class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
-    <div class="w-full md:w-1/2" data-animate="fade-left">
-      <iframe 
-        src="https://www.youtube.com/embed/L-osEc07vMs" 
-        title="What is Osmosis?" 
-        class="rounded-2xl shadow-lg w-full h-64 md:h-96" 
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="w-full md:w-1/2" data-animate="fade-right">
-      <h2 class="text-3xl font-bold mb-4">What is Osmosis?</h2>
-      <p class="text-lg leading-relaxed">In biology, osmosis is defined as the net movement of water molecules through a biological membrane (e.g. cell membrane) from an area of higher to an area of lower water potential. Other definitions of osmosis are as follows:
+  <!-- Top Banner (static, not fullscreen) -->
+<div class="w-full bg-cyan-700 py-10 flex items-center justify-center shadow-lg">
+  <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-wide text-center">All About Osmosis</h1>
+</div>
 
-        The process of a solvent diffusing through a semipermeable membrane from an area of low solute concentration to an area of high solute concentration
-        The tendency of water to flow from a hypotonic solution (low concentration of dissolved substances) to a hypertonic solution (higher concentration of dissolved substances) across a semipermeable membrane
-        In chemistry, osmosis is defined similarly. It is the passage of a pure solvent from a solution of lesser to one of greater concentration of solutes when the two solutions are separated by a membrane that selectively prevents the passage of solute molecules while allowing the solvent molecules to pass through.
-        
-        Etymology: The term osmosis is a Latinized form of now obsolete osmose. A derived word is osmotic, which is defined as pertaining to or of the nature of osmosis. Thus, osmotic pressure, for instance, is a pressure that arises due to or is relevant to osmosis.</p>
-    </div>
-  </section>
+<!-- Add space between banners -->
+<div class="h-10 md:h-16"></div>
 
-  <!-- Section 2 (Flipped) -->
-  <section class="flex flex-col md:flex-row-reverse items-center py-20 px-4 md:px-20 gap-10 bg-gray-800">
-    <div class="w-full md:w-1/2" data-animate="fade-right">
-      <img src="https://cdn-ildfibj.nitrocdn.com/qaWeLntkRcyxNUcEoWbLpZLQkcgLFsiJ/assets/images/optimized/www.biologyonline.com/wp-content/uploads/dictionary/images/Cells-in-solutions.png" alt="Biology" class="rounded-2xl shadow-lg w-full">
-    </div>
-    <div class="w-full md:w-1/2 space-y-6" data-animate="fade-left">
-        <h2 class="text-3xl font-bold mb-4">Understanding Osmosis</h2>
-        <p class="text-lg leading-relaxed">
-          A solution is comprised essentially of the <strong>solute</strong> (a substance to be dissolved) and the <strong>solvent</strong> (the component that dissolves the solutes). The concentrations of these constituents determine if a solution is <em>isotonic</em>, <em>hypotonic</em>, or <em>hypertonic</em> compared to another.
-        </p>
-      
-        <div class="space-y-4">
-          <h3 class="text-2xl font-semibold text-cyan-400">Isotonic</h3>
-          <p class="text-lg leading-relaxed">
-            An <strong>isotonic solution</strong> contains the same concentration of solutes as another solution. For example, if a cell is isotonic to its environment, there is no net movement of water molecules—osmotic pressure is balanced inside and outside the cell.
-          </p>
-        </div>
-      
-        <div class="space-y-4">
-          <h3 class="text-2xl font-semibold text-cyan-400">Hypotonic</h3>
-          <p class="text-lg leading-relaxed">
-            A <strong>hypotonic solution</strong> has fewer solutes (lower osmotic pressure) than the solution it's compared with. Water will move toward the more concentrated solution to balance it out. If the environment is hypotonic, water will move into the cell, possibly causing it to swell.
-          </p>
-        </div>
-      
-        <div class="space-y-4">
-          <h3 class="text-2xl font-semibold text-cyan-400">Hypertonic</h3>
-          <p class="text-lg leading-relaxed">
-            A <strong>hypertonic solution</strong> has more solutes (higher osmotic pressure) than the solution it’s compared with. Water moves out of the cell into the surrounding fluid, which can cause the cell to shrink or shrivel.
-          </p>
-        </div>
-      </div>
-      
-  </section>
+<!-- Parallax Banner 1: What is Osmosis -->
+<div id="parallax-banner-1"
+     class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-700 z-40">
+  <h2 class="absolute w-full text-center text-4xl md:text-5xl font-bold text-white drop-shadow-lg z-10">
+    What is Osmosis?
+  </h2>
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-50"></div>
+</div>
 
-  <!-- Section 3 -->
-  <section class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
-    <div class="w-full md:w-1/2" data-animate="fade-right">
-      <img src="https://telgurus.co.uk/srcgurus/uploads/2021/10/OSMOSIS.jpg" alt="Osmosis Example" class="rounded-2xl shadow-lg w-full">
+<!-- Section 1 (image and desc, always visible) -->
+<section id="osmosis-section-1" class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
+  <div class="w-full md:w-1/2" data-animate="fade-left">
+    <iframe 
+      src="https://www.youtube.com/embed/L-osEc07vMs" 
+      title="What is Osmosis?" 
+      class="rounded-2xl shadow-lg w-full h-64 md:h-96" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="w-full md:w-1/2" data-animate="fade-right">
+    <h2 class="text-3xl font-bold mb-4">What is Osmosis?</h2>
+    <p class="text-lg leading-relaxed">In biology, osmosis is defined as the net movement of water molecules through a biological membrane (e.g. cell membrane) from an area of higher to an area of lower water potential. Other definitions of osmosis are as follows:
+      <br><br>
+      The process of a solvent diffusing through a semipermeable membrane from an area of low solute concentration to an area of high solute concentration.
+      <br>
+      The tendency of water to flow from a hypotonic solution (low concentration of dissolved substances) to a hypertonic solution (higher concentration of dissolved substances) across a semipermeable membrane.
+      <br>
+      In chemistry, osmosis is defined similarly. It is the passage of a pure solvent from a solution of lesser to one of greater concentration of solutes when the two solutions are separated by a membrane that selectively prevents the passage of solute molecules while allowing the solvent molecules to pass through.
+      <br><br>
+      Etymology: The term osmosis is a Latinized form of now obsolete osmose. A derived word is osmotic, which is defined as pertaining to or of the nature of osmosis. Thus, osmotic pressure, for instance, is a pressure that arises due to or is relevant to osmosis.
+    </p>
+  </div>
+</section>
+
+<!-- Parallax Banner 2: Understanding Osmosis -->
+<div id="parallax-banner-2"
+     class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-purple-700 via-blue-900 to-cyan-700 z-40">
+  <h2 class="absolute w-full text-center text-4xl md:text-5xl font-bold text-white drop-shadow-lg z-10">
+    Understanding Osmosis
+  </h2>
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-60 blur-sm brightness-75"></div>
+</div>
+
+<!-- Section 2 (Flipped) -->
+<section id="osmosis-section-2" class="flex flex-col md:flex-row-reverse items-center py-20 px-4 md:px-20 gap-10 bg-gray-800">
+  <div class="w-full md:w-1/2" data-animate="fade-right">
+    <img src="https://cdn-ildfibj.nitrocdn.com/qaWeLntkRcyxNUcEoWbLpZLQkcgLFsiJ/assets/images/optimized/www.biologyonline.com/wp-content/uploads/dictionary/images/Cells-in-solutions.png" alt="Biology" class="rounded-2xl shadow-lg w-full">
+  </div>
+  <div class="w-full md:w-1/2 space-y-6" data-animate="fade-left">
+    <h2 class="text-3xl font-bold mb-4">Understanding Osmosis</h2>
+    <p class="text-lg leading-relaxed">
+      A solution is comprised essentially of the <strong>solute</strong> (a substance to be dissolved) and the <strong>solvent</strong> (the component that dissolves the solutes). The concentrations of these constituents determine if a solution is <em>isotonic</em>, <em>hypotonic</em>, or <em>hypertonic</em> compared to another.
+    </p>
+    <div class="space-y-4">
+      <h3 class="text-2xl font-semibold text-cyan-400">Isotonic</h3>
+      <p class="text-lg leading-relaxed">
+        An <strong>isotonic solution</strong> contains the same concentration of solutes as another solution. For example, if a cell is isotonic to its environment, there is no net movement of water molecules—osmotic pressure is balanced inside and outside the cell.
+      </p>
     </div>
-    <div class="w-full md:w-1/2" data-animate="fade-right">
-      <h2 class="text-3xl font-bold mb-4">Example of Osmosis</h2>
-      <p class="text-lg leading-relaxed">A saltwater or freshwater fish is placed in water with varying salt concentrations, the fish dies because of the exit and entry of water in fish cells.
-        The water absorption from the soil is because of the osmosis process. As the plant roots have a higher concentration as compared to the soil, so consequently the water flows into the roots.
-        Individuals suffering from cholera are also affected by the osmosis process. The bacteria which overpopulate the intestine, reverse the absorption flow and does not allow the intestine to absorb the water, which further results in dehydration.
-        The plant’s guard cells are also affected by the osmosis process. This happens when the plant cells are filled with water it results in the swelling up of the guard cells and opens up the stomata.
-        Whenever the fingers are placed in water for a longer time, they become pruney because of the water flow inside the cells.</p>
+    <div class="space-y-4">
+      <h3 class="text-2xl font-semibold text-cyan-400">Hypotonic</h3>
+      <p class="text-lg leading-relaxed">
+        A <strong>hypotonic solution</strong> has fewer solutes (lower osmotic pressure) than the solution it's compared with. Water will move toward the more concentrated solution to balance it out. If the environment is hypotonic, water will move into the cell, possibly causing it to swell.
+      </p>
     </div>
-  </section>
+    <div class="space-y-4">
+      <h3 class="text-2xl font-semibold text-cyan-400">Hypertonic</h3>
+      <p class="text-lg leading-relaxed">
+        A <strong>hypertonic solution</strong> has more solutes (higher osmotic pressure) than the solution it’s compared with. Water moves out of the cell into the surrounding fluid, which can cause the cell to shrink or shrivel.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Parallax Banner 3: Examples of Osmosis -->
+<div id="parallax-banner-3"
+     class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-green-900 via-blue-800 to-purple-900 z-40">
+  <h2 class="absolute w-full text-center text-4xl md:text-5xl font-bold text-white drop-shadow-lg z-10">
+    Examples of Osmosis
+  </h2>
+  <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1465101178521-c1a9136a3fd8?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-60 blur-sm brightness-75"></div>
+</div>
+
+<!-- Section 3 -->
+<section id="osmosis-section-3" class="flex flex-col md:flex-row items-center py-20 px-4 md:px-20 gap-10">
+  <div class="w-full md:w-1/2" data-animate="fade-right">
+    <img src="https://telgurus.co.uk/srcgurus/uploads/2021/10/OSMOSIS.jpg" alt="Osmosis Example" class="rounded-2xl shadow-lg w-full">
+  </div>
+  <div class="w-full md:w-1/2" data-animate="fade-right">
+    <h2 class="text-3xl font-bold mb-4">Example of Osmosis</h2>
+    <p class="text-lg leading-relaxed">A saltwater or freshwater fish is placed in water with varying salt concentrations, the fish dies because of the exit and entry of water in fish cells.
+      The water absorption from the soil is because of the osmosis process. As the plant roots have a higher concentration as compared to the soil, so consequently the water flows into the roots.
+      Individuals suffering from cholera are also affected by the osmosis process. The bacteria which overpopulate the intestine, reverse the absorption flow and does not allow the intestine to absorb the water, which further results in dehydration.
+      The plant’s guard cells are also affected by the osmosis process. This happens when the plant cells are filled with water it results in the swelling up of the guard cells and opens up the stomata.
+      Whenever the fingers are placed in water for a longer time, they become pruney because of the water flow inside the cells.</p>
+  </div>
+</section>
 
   <!-- Go Back Button -->
   <div class="go-back-btn">
@@ -139,7 +173,6 @@
   </a>
 </div>
 
-  <script> src="loading.js"</script>
-
+  <script src="osmosis.js"></script>
 </body>
 </html>
