@@ -5,6 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Team Carousel</title>
   <style>
+
+  #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000000;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 1s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+    }
+
+    /* Bars Animation */
+    .bars {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .bar {
+      width: 6px;
+      height: 30px;
+      background-color: #ffffff;
+      animation: bounce 1s infinite ease-in-out;
+    }
+
+    .bar:nth-child(1) { animation-delay: 0s; }
+    .bar:nth-child(2) { animation-delay: 0.1s; }
+    .bar:nth-child(3) { animation-delay: 0.2s; }
+    .bar:nth-child(4) { animation-delay: 0.3s; }
+    .bar:nth-child(5) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1.2); }
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -509,24 +554,52 @@
   </style>
 </head>
 <body>
-  <div class="back-button-container">
-  <div class="styled-wrapper">
-    <button class="button" onclick="window.location.href='explore.html'">
-      <div class="button-box">
-        <span class="button-elem">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
-            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-          </svg>
-        </span>
-        <span class="button-elem">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
-            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
-          </svg>
-        </span>
-      </div>
-    </button>
+  <div id="preloader">
+    <div class="bars">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="loading-text">LOADING</div>
   </div>
+
+
+ <script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+
+    const minimumLoadTime = 700;
+    setTimeout(() => {
+      preloader.classList.add("fade-out");
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }, 500);
+    }, minimumLoadTime);
+  });
+</script>
+
+  <div class="back-button-container">
+<div class="styled-wrapper">
+    <button class="button" onclick="window.location.href='explore.html'">
+        <div class="button-box">
+          <span class="button-elem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+            </svg>
+          </span>
+          <span class="button-elem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+              <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+            </svg>
+          </span>
+        </div>
+</button>
 </div>
+  </div>
 
   <h1 class="about-title">OUR TEAM</h1>
   <div class="carousel-container">

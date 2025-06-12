@@ -14,6 +14,54 @@
     <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
 
     <style>
+
+      #loading-text {
+        color:#ffffff;
+      }
+       #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000000;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 1s ease;
+    }
+
+    #preloader.fade-out {
+      opacity: 0;
+    }
+
+    /* Bars Animation */
+    .bars {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .bar {
+      width: 6px;
+      height: 30px;
+      background-color: #ffffff;
+      animation: bounce 1s infinite ease-in-out;
+    }
+
+    .bar:nth-child(1) { animation-delay: 0s; }
+    .bar:nth-child(2) { animation-delay: 0.1s; }
+    .bar:nth-child(3) { animation-delay: 0.2s; }
+    .bar:nth-child(4) { animation-delay: 0.3s; }
+    .bar:nth-child(5) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1.2); }
+    }
+
       html,
       body {
         margin: 0;
@@ -21,6 +69,7 @@
         font-family: 'Helvetica', sans-serif;
         overflow: hidden;
         height: 100%;
+        color:#ffffff;
       }
 
       body {
@@ -32,6 +81,45 @@
     </style>
   </head>
   <body>
+    <!-- Audio Player & Mute Button -->
+    <audio id="bg-audio" src="audio.mp3" autoplay loop></audio>
+    <button
+      id="muteBtn"
+      type="button"
+      style="position:fixed;top:24px;right:24px;z-index:10000;background:rgba(0,0,0,0.5);color:#fff;border:none;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;"
+      aria-label="Mute/Unmute Audio"
+    >
+      <span id="muteIcon" style="font-size:1.5rem;">🔊</span>
+    </button>
+
+    <div id="preloader">
+    <div class="bars">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="loading-text">LOADING</div>
+  </div>
+
+
+ <script>
+  window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+
+    const minimumLoadTime = 700;
+    setTimeout(() => {
+      preloader.classList.add("fade-out");
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }, 500);
+    }, minimumLoadTime);
+  });
+</script>
+
     <section class="relative w-full h-screen overflow-hidden text-xs font-semibold text-white/30">
       <a
         href="https://www.apc.edu.ph"
@@ -126,5 +214,25 @@
         });
       });
     </script>
+
+    <script>
+  const audio = document.getElementById('bg-audio');
+  const muteBtn = document.getElementById('muteBtn');
+  const muteIcon = document.getElementById('muteIcon');
+
+  // Set initial volume lower (e.g., 20%)
+  audio.volume = 0.6;
+
+  // Ensure audio plays on user interaction (for browsers that block autoplay)
+  document.body.addEventListener('click', function playAudioOnce() {
+    audio.play().catch(()=>{});
+    document.body.removeEventListener('click', playAudioOnce);
+  });
+
+  muteBtn.addEventListener('click', function () {
+    audio.muted = !audio.muted;
+    muteIcon.textContent = audio.muted ? '🔇' : '🔊';
+  });
+</script>
   </body>
 </html>

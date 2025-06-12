@@ -108,18 +108,6 @@ main {
   }
 }
 
-/* Downward arrow indicator above navbar, follows navbar horizontally, no animation */
-.nav-arrow-indicator {
-  position: absolute;
-  left: 50%;
-  top: 10px;
-  transform: translateX(-50%);
-  z-index: 10;
-  pointer-events: none;
-  transition: left 0.3s, transform 0.3s;
-}
-
-/* Make sure .nav is positioned relative to the main container */
 .nav {
   position: absolute;
   bottom: 2rem;

@@ -1,116 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Frontend Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <style>
-      body {
-        background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
-        font-family: 'Poppins', sans-serif;
-        color: white;
-      }
-      .neon-border {
-        border: 6px solid #06b6d4;
-        box-shadow: 0 0 50px #06b6d4;
-      }
-      .big-content {
-        max-width: 1200px;
-        width: 100%;
-        padding: 3rem 2rem;
-        border-radius: 2.5rem;
-        font-size: 1.35rem;
-      }
-      .big-avatar {
-        width: 500px;
-        height: 500px;
-        border-radius: 2.5rem;
-      }
-      /* Go Back Button Styles */
-      .styled-wrapper {
-        position: absolute;
-        top: 32px;
-        left: 32px;
-        z-index: 50;
-      }
-      .styled-wrapper .button {
-        display: block;
-        position: relative;
-        width: 76px;
-        height: 76px;
-        margin: 0;
-        overflow: hidden;
-        outline: none;
-        background-color: transparent;
-        cursor: pointer;
-        border: 0;
-      }
-      .styled-wrapper .button:before {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        inset: 7px;
-        border: 3px solid white; /* Changed from black to white */
-        transition:
-          opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-          transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-      }
-      .styled-wrapper .button:after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        inset: 7px;
-        border: 4px solid #599a53;
-        transform: scale(1.3);
-        transition:
-          opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-          transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        opacity: 0;
-      }
-      .styled-wrapper .button:hover:before,
-      .styled-wrapper .button:focus:before {
-        opacity: 0;
-        transform: scale(0.7);
-        transition:
-          opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-          transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      }
-      .styled-wrapper .button:hover:after,
-      .styled-wrapper .button:focus:after {
-        opacity: 1;
-        transform: scale(1);
-        transition:
-          opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
-          transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
-      }
-      .styled-wrapper .button-box {
-        display: flex;
-        position: absolute;
-        top: 0;
-        left: 0;
-        
-      }
-      .styled-wrapper .button-elem {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin: 24px 18px 0 22px;
-        transform: rotate(360deg);
-        fill: #f0eeef;
-      }
-      .styled-wrapper .button:hover .button-box,
-      .styled-wrapper .button:focus .button-box {
-        transition: 0.4s;
-        transform: translateX(-69px);
-      }
-      @media (max-width: 900px) {
-        .big-content { max-width: 100%; padding: 2rem 0.5rem; font-size: 1rem; }
-        .big-avatar { width: 220px; height: 220px; }
-        .styled-wrapper { top: 12px; left: 12px; }
-      }
-      .dynamic-txts {
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio - Frontend Developer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<style>
+body {
+  background: radial-gradient(circle at center, #0a1124 0%, #01030a 100%);
+  font-family: 'Poppins', sans-serif;
+  color: #e6eaf3;
+}
+.neon-border {
+  border: 6px solid #1e293b; /* navy blue border */
+  box-shadow: 0 0 50px #444547;
+}
+.big-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 3rem 2rem;
+  border-radius: 2.5rem;
+  font-size: 1.35rem;
+  background: rgba(10, 17, 36, 0.97); /* navy blue background */
+  box-shadow: 0 8px 32px 0 rgba(2, 3, 10, 0.37);
+}
+.big-avatar {
+  width: 500px;
+  height: 500px;
+  border-radius: 2.5rem;
+  background: #0a1124;
+}
+/* Go Back Button Styles */
+.styled-wrapper {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  z-index: 50;
+}
+.styled-wrapper .button {
+  display: block;
+  position: relative;
+  width: 76px;
+  height: 76px;
+  margin: 0;
+  overflow: hidden;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+.styled-wrapper .button:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+  border: 3px solid #e6eaf3;
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+.styled-wrapper .button:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 7px;
+  border: 4px solid #1e293b;
+  transform: scale(1.3);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+}
+.styled-wrapper .button:hover:before,
+.styled-wrapper .button:focus:before {
+  opacity: 0;
+  transform: scale(0.7);
+  transition:
+    opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.styled-wrapper .button:hover:after,
+.styled-wrapper .button:focus:after {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1) 80ms,
+    transform 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 80ms;
+}
+.styled-wrapper .button-box {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.styled-wrapper .button-elem {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 24px 18px 0 22px;
+  transform: rotate(360deg);
+  fill: #e6eaf3;
+}
+.styled-wrapper .button:hover .button-box,
+.styled-wrapper .button:focus .button-box {
+  transition: 0.4s;
+  transform: translateX(-69px);
+}
+@media (max-width: 900px) {
+  .big-content { max-width: 100%; padding: 2rem 0.5rem; font-size: 1rem; }
+  .big-avatar { width: 220px; height: 220px; }
+  .styled-wrapper { top: 12px; left: 12px; }
+}
+.dynamic-txts {
   margin-left: 0;
   height: 56px;
   line-height: 56px;
@@ -137,6 +139,7 @@
   margin: 0;
   line-height: 56px;
   display: inline-block;
+  color: #60a5fa; /* navy blue accent */
 }
 .dynamic-txts li span::after {
   content: "";
@@ -144,8 +147,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: #111827;
-  border-left: 2px solid #06b6d4;
+  background: #0a1124;
+  border-left: 2px solid #60a5fa;
   animation: typing 2s steps(18) infinite;
 }
 @keyframes typing {
@@ -156,90 +159,103 @@
     left: 0;
   }
 }
-    </style>
-  </head>
-  <body class="min-h-screen flex items-center justify-center relative">
-    <!-- Go Back Button -->
-    <div class="styled-wrapper">
-      <button class="button" onclick="window.location.href='Creators.html';">
-        <div class="button-box">
-          <span class="button-elem">
-            <svg
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              class="arrow-icon"
-            >
-              <path
-                fill="white"
-                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-              ></path>
-            </svg>
-          </span>
-          <span class="button-elem">
-            <svg
-              fill="white"
-              viewBox="0 0  24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              class="arrow-icon"
-            >
-              <path
-                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
-              ></path>
-            </svg>
-          </span>
-        </div>
-      </button>
-    </div>
-    <div class="bg-[#111827] big-content shadow-lg rounded-3xl md:flex md:justify-between md:items-center">
-      <!-- Text Content -->
-      <div class="max-w-lg">
-        <h2 class="text-white text-2xl font-semibold mb-2">Hello, It's Me</h2>
-        <h1 class="text-6xl font-extrabold text-white mb-2">Ron Aiden</h1>
-        <div class="flex items-center mb-6">
-          <span class="text-3xl font-bold text-cyan-400 mr-3">I'm a</span>
-          <ul class="dynamic-txts">
-            <li><span class="text-3xl font-bold text-cyan-400">Front-End Developer</span></li>
-            <li><span class="text-3xl font-bold text-cyan-400">Groomer</span></li>
-            <li><span class="text-3xl font-bold text-cyan-400">Cyclist</span></li>
-            <li><span class="text-3xl font-bold text-cyan-400">Gym Bro</span></li>
-          </ul>
-        </div>
-        <p class="text-white/70 mb-8 text-lg leading-relaxed">
-         I make websites that are not only functional but also visually appealing. My passion for cycling and fitness keeps me energized and focused, allowing me to tackle challenges with a fresh perspective. Whether it's coding, GROOMING, or hitting the gym, I bring dedication and enthusiasm to everything I do.
-        </p>
-        <div class="flex items-center space-x-6 mb-8">
-          <a href="#" class="text-white hover:text-cyan-400">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.26 4.26 0 001.88-2.36 8.53 8.53 0 01-2.7 1.03 4.24 4.24 0 00-7.24 3.86A12.03 12.03 0 013 4.79a4.23 4.23 0 001.31 5.65 4.22 4.22 0 01-1.92-.53v.05a4.25 4.25 0 003.4 4.17 4.28 4.28 0 01-1.91.07 4.26 4.26 0 003.97 2.95A8.51 8.51 0 012 19.55 12.01 12.01 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.35 8.35 0 0022.46 6z" />
-            </svg>
-          </a>
-          <a href="#" class="text-white hover:text-cyan-400">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.66c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.77l-.44 2.89h-2.33V22C18.34 21.13 22 16.99 22 12c0-5.52-4.48-10-10-10z" />
-            </svg>
-          </a>
-          <a href="#" class="text-white hover:text-cyan-400">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.761 0 5-2.238 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.783 1.75-1.75 1.75zm13.5 10.271h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.083c.438-.63 1.456-1.083 2.5-1.083 1.93 0 3.5 1.57 3.5 3.5v5.5z" />
-            </svg>
-          </a>
-        </div>
-      </div>
+.text-cyan-400 {
+  color: #60a5fa !important;
+}
+.bg-\[\#111827\] {
+  background-color: #0a1124 !important;
+}
+.text-white,
+.text-white\/70 {
+  color: #e6eaf3 !important;
+}
+.hover\:text-cyan-400:hover {
+  color: #60a5fa !important;
+}
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center relative">
+<!-- Go Back Button -->
+<div class="styled-wrapper">
+<button class="button" onclick="window.location.href='Creators.html';">
+<div class="button-box">
+<span class="button-elem">
+<svg
+viewBox="0 0 24 24"
+xmlns="http://www.w3.org/2000/svg"
+class="arrow-icon"
+>
+<path
+fill="white"
+d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+></path>
+</svg>
+</span>
+<span class="button-elem">
+<svg
+fill="white"
+viewBox="0 0 24 24"
+xmlns="http://www.w3.org/2000/svg"
+class="arrow-icon"
+>
+<path
+d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+></path>
+</svg>
+</span>
+</div>
+</button>
+</div>
+<div class="bg-[#111827] big-content shadow-lg rounded-3xl md:flex md:justify-between md:items-center">
+<!-- Text Content -->
+<div class="max-w-lg">
+<h2 class="text-white text-2xl font-semibold mb-2">Hello, It's Me</h2>
+<h1 class="text-6xl font-extrabold text-white mb-2">Ron Aiden</h1>
+<div class="flex items-center mb-6">
+<span class="text-3xl font-bold text-cyan-400 mr-3">I'm a</span>
+<ul class="dynamic-txts">
+<li><span class="text-3xl font-bold text-cyan-400">Front-End Developer</span></li>
+<li><span class="text-3xl font-bold text-cyan-400">Groomer</span></li>
+<li><span class="text-3xl font-bold text-cyan-400">Cyclist</span></li>
+<li><span class="text-3xl font-bold text-cyan-400">Gym Bro</span></li>
+</ul>
+</div>
+<p class="text-white/70 mb-8 text-lg leading-relaxed">
+I make websites that are not only functional but also visually appealing. My passion for cycling and fitness keeps me energized and focused, allowing me to tackle challenges with a fresh perspective. Whether it's coding, GROOMING, or hitting the gym, I bring dedication and enthusiasm to everything I do.
+</p>
+<div class="flex items-center space-x-6 mb-8">
+<a href="#" class="text-white hover:text-cyan-400">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.26 4.26 0 001.88-2.36 8.53 8.53 0 01-2.7 1.03 4.24 4.24 0 00-7.24 3.86A12.03 12.03 0 013 4.79a4.23 4.23 0 001.31 5.65 4.22 4.22 0 01-1.92-.53v.05a4.25 4.25 0 003.4 4.17 4.28 4.28 0 01-1.91.07 4.26 4.26 0 003.97 2.95A8.51 8.51 0 012 19.55 12.01 12.01 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.35 8.35 0 0022.46 6z" />
+</svg>
+</a>
+<a href="#" class="text-white hover:text-cyan-400">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99h-2.54v-2.89h2.54V9.66c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56v1.87h2.77l-.44 2.89h-2.33V22C18.34 21.13 22 16.99 22 12c0-5.52-4.48-10-10-10z" />
+</svg>
+</a>
+<a href="#" class="text-white hover:text-cyan-400">
+<svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.761 0 5-2.238 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.271c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.783 1.75-1.75 1.75zm13.5 10.271h-3v-4.5c0-1.071-.929-2-2-2s-2 .929-2 2v4.5h-3v-9h3v1.083c.438-.63 1.456-1.083 2.5-1.083 1.93 0 3.5 1.57 3.5 3.5v5.5z" />
+</svg>
+</a>
+</div>
+</div>
 
-      <!-- Avatar Image -->
-      <div class="mt-10 md:mt-0 flex justify-center">
-        <div class="big-avatar neon-border overflow-hidden mx-auto">
-          <img src="ronai.jpg" alt="John Kendric" class="w-full h-full object-cover" />
-        </div>
-      </div>
-    </div>
+<!-- Avatar Image -->
+<div class="mt-10 md:mt-0 flex justify-center">
+<div class="big-avatar neon-border overflow-hidden mx-auto">
+<img src="chrimuh.png" alt="John Kendric" class="w-full h-full object-cover" />
+</div>
+</div>
+</div>
 
-    <script>
-      gsap.from("h1", { opacity: 0, x: -50, duration: 1, delay: 0.3 });
-      gsap.from("h2", { opacity: 0, x: -50, duration: 1, delay: 0.5 });
-      gsap.from("h3", { opacity: 0, x: -50, duration: 1, delay: 0.7 });
-      gsap.from("p", { opacity: 0, y: 20, duration: 1, delay: 0.9 });
-      gsap.from(".big-avatar", { scale: 0, opacity: 0, duration: 1, delay: 1.2, ease: "elastic.out(1, 0.3)" });
-    </script>
-  </body>
+<script>
+gsap.from("h1", { opacity: 0, x: -50, duration: 1, delay: 0.3 });
+gsap.from("h2", { opacity: 0, x: -50, duration: 1, delay: 0.5 });
+gsap.from("h3", { opacity: 0, x: -50, duration: 1, delay: 0.7 });
+gsap.from("p", { opacity: 0, y: 20, duration: 1, delay: 0.9 });
+gsap.from(".big-avatar", { scale: 0, opacity: 0, duration: 1, delay: 1.2, ease: "elastic.out(1, 0.3)" });
+</script>
+</body>
 </html>
