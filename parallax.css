@@ -1,0 +1,109 @@
+:root {
+  --white: #f8f8f8;
+  --black: #222;
+  --salmon: #fa8072;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin-top: 70px;
+  font: 20px/28px "Questrial", sans-serif;
+  color: var(--white);
+  background: var(--black);
+}
+
+a { color: inherit; }
+img { max-width: 100%; height: auto; }
+
+.section { padding: 0 15px; }
+
+.section-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-hero .h1 {
+  font-size: 20vmin;
+  line-height: 0.9;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 10px #1a1423;
+}
+
+.hero-title-clone {
+  position: absolute;
+  color: var(--salmon);
+}
+
+.hero-img-wrapper {
+  position: relative;
+  margin-top: -10vh;
+  overflow: hidden;
+}
+
+.hero-img-wrapper img {
+  border-radius: 10px;
+}
+
+.section-hero ~ .section {
+  position: relative;
+  z-index: 2;
+}
+
+.section-text {
+  background: url(https://assets.codepen.io/162656/man-walking.jpg) no-repeat fixed center right / cover;
+  margin-top: 20vh;
+}
+
+.section-text::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(56, 36, 52, 0.5);
+}
+
+.section-text div {
+  position: relative;
+  max-width: 700px;
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+.section-text p { margin-top: 20px; }
+
+.section-last {
+  text-align: center;
+  padding: 15vh 15px;
+  font-size: 5vmin;
+  line-height: 1;
+  background: var(--black);
+}
+
+.section-last p { margin-top: 5px; }
+
+.page-footer {
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  z-index: 2;
+  font-size: 16px;
+  color: var(--black);
+  background: var(--white);
+}
+
+.page-footer a {
+  display: flex;
+  margin-left: 4px;
+}
